@@ -1,4 +1,5 @@
 import _ from "lodash";
+import { GraphQLClient } from "graphql-request";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import {
@@ -7,15 +8,21 @@ import {
   useQueryProductOne,
 } from "../../../../../src/component/hooks/query/useMutationFetchProducts";
 import WebsiteDetailItem from "../../../../../src/component/unit/websiteDetail";
-
-export default function ProductDetailPage() {
+import { IQuery, IQueryFetchProductArgs, IQueryFetchProductsArgs } from "../../../../../src/commons/types/generated/types";
+import { FETCH_PROUDUCT, FETCH_PROUDUCTS } from "../../../../../src/component/unit/list/productList.queries";
+export type IDetailItemPropsSSR = {
+  data?: Pick<IQuery, "fetchProduct"> | undefined;
+  dataProducts?:Pick<IQuery, "fetchProducts"> | undefined;
+ 
+};
+export default function ProductDetailPage(props:IDetailItemPropsSSR) {
   const router = useRouter();
-  const { data } = useQueryProductOne({
-    productId: String(router.query.productId),
-  });
-  const { data: dataProducts } = useQueryFetchProduscts({
-    search: data?.fetchProduct.files?.[0]?.name.split(".")[1],
-  });
+  // const { data } = useQueryProductOne({
+  //   productId: String(router.query.productId),
+  // });
+  // const { data: dataProducts } = useQueryFetchProduscts({
+  //   search: data?.fetchProduct.files?.[0]?.name.split(".")[1],
+  // });
 
   const { data: dataBestProducts } = useQueryBestProducts();
   // console.log(dataBestProducts);
@@ -43,65 +50,56 @@ export default function ProductDetailPage() {
     <>
       <WebsiteDetailItem
         mainId={mainId}
-        data={data}
+        data={props.data}
         isBestItems={false}
         mainImg={mainImg}
         // mainId={mainId}
         onClickImage={onClickImage}
         // onClickMoveToDetail={onClickMoveToDetail}
-        dataProducts={dataProducts}
+        dataProducts={props.dataProducts}
         dataBestProducts={dataBestProducts}
       />
-      {/* <section className='product-detail-section'>
-        <div className='product-detail-images'>
-          {!mainImg ? (
-            <div>
-              <img
-                src={`https://storage.cloud.google.com/webportfolio-backend-storage/${data?.fetchProduct.files?.[0]?.name}`}
-              />
-            </div>
-          ) : (
-            <div>
-              <img
-                src={`https://storage.cloud.google.com/webportfolio-backend-storage/${mainImg}`}
-              />
-            </div>
-          )}
 
-          <div className='detail-items-preview'>
-            {dataProducts?.fetchProducts.map((el, i) => (
-              <div
-                key={i}
-                id={el.files?.[0]?.name}
-                onClick={() => onClickImage(el.files?.[0]?.name)}>
-                {" "}
-                <img
-                  src={`https://storage.cloud.google.com/webportfolio-backend-storage/${el.files?.[0]?.name}`}
-                />
-              </div>
-            ))}
-          </div>
-          <div className='product-detail-contents'>
-            <p></p>
-          </div>
-        </div>
-      </section>
-      <section className='product-best-items-section'>
-        <h1>BEST ITEMS</h1>
-        <div className='item'>
-          {dataBestProducts?.fetchBestProducts.map((el, i) => (
-            <div key={i} onClick={onClickMoveToDetail(String(el.id))}>
-              <img
-                // onClick={onClickMoveToDetail(String(el.id))}
-                src={`https://storage.cloud.google.com/webportfolio-backend-storage/${el.files?.[0]?.name}`}
-              />
-              <p>{el.name}</p>
-              <p>{el.description}</p>
-              <p>$ {el.price}</p>
-            </div>
-          ))}
-        </div>
-      </section> */}
     </>
   );
 }
+
+
+//만약 서버사이드 렌더링을 하는 페이지라면, yarn build:ssg해서 out 폴더 생성 불가! => next.config.js애서 exportPathMap으로 그 페이지 재외시키기!
+export const getServerSideProps = async (context: any): Promise<any> => {
+  const { productId } = context.params;
+
+  try {
+    const graphQLClient = new GraphQLClient('https://backend.amberpark.net/graphql');
+
+   // const { data } = useQueryProductOne({
+  //   productId: String(router.query.productId),
+  // });
+  // const { data: dataProducts } = useQueryFetchProduscts({
+  //   search: data?.fetchProduct.files?.[0]?.name.split(".")[1],
+  // });
+
+
+    const data = await graphQLClient.request<IQuery, IQueryFetchProductArgs>(FETCH_PROUDUCT, {
+      productId: String(productId),
+    });
+    console.log(data)
+    const dataProducts = await graphQLClient.request<IQuery, IQueryFetchProductsArgs>(FETCH_PROUDUCTS, {
+      search: data?.fetchProduct.files?.[0]?.name.split(".")[1],
+    });
+    console.log(data, dataProducts)
+    return {
+      props: {
+        data,
+        dataProducts
+      },
+    };
+
+    
+  } catch (error) {
+    console.error('Error fetching product:', error);
+    return {
+      notFound: true,
+    };
+  }
+};

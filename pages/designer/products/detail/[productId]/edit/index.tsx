@@ -54,6 +54,8 @@ export default function ProductEditPage(props: any) {
     </>
   );
 }
+
+//만약 서버사이드 렌더링을 하는 페이지라면, yarn build:ssg해서 out 폴더 생성 불가! => next.config.js애서 exportPathMap으로 그 페이지 재외시키기!
 export const getServerSideProps = async (context: any): Promise<any> => {
   const { productId } = context.params;
 

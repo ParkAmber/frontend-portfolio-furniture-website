@@ -15,6 +15,7 @@ import {
 import { useMoveToPage } from "../../hooks/customs/useMoveToPage";
 import Link from "next/link";
 export default function WebsiteDetailItem(props: IDetailItemProps) {
+ console.log(props.dataBest)
   const onClickStopPropogation = (e: MouseEvent<HTMLParagraphElement>) => {
     e.stopPropagation();
   };
@@ -45,7 +46,7 @@ export default function WebsiteDetailItem(props: IDetailItemProps) {
                   {props.isBestItems ? (
                     //   <div style={{ border: "2px solid blue" }}>
                     <img
-                      src={`https://storage.cloud.google.com/webportfolio-backend-storage/${props.dataBest?.fetchBestProduct.files?.[0]?.name}`}
+                      src={`https://storage.cloud.google.com/webportfolio-backend-storage/${props.dataBest?.fetchBestProduct?.files?.[0]?.name}`}
                     />
                   ) : (
                     //   </div>
@@ -63,7 +64,7 @@ export default function WebsiteDetailItem(props: IDetailItemProps) {
                 </div>
               )}
               <div className='detail-items-preview'>
-                {props.dataProducts?.fetchProducts.map((el, i) => (
+                {props.dataProducts?.fetchProducts?.map((el, i) => (
                   <div
                     key={i}
                     id={el.files?.[0]?.name}
@@ -82,17 +83,17 @@ export default function WebsiteDetailItem(props: IDetailItemProps) {
               {props.isBestItems ? (
                 <>
                   <h3>
-                    {props.dataBest?.fetchBestProduct.name}
+                    {props.dataBest?.fetchBestProduct?.name}
                     {/* ,{router.query.productId},{props.mainId},{props.mainImg} */}
                   </h3>
                   <p className='description'>
-                    {props.dataBest?.fetchBestProduct.description}
+                    {props.dataBest?.fetchBestProduct?.description}
                   </p>
                   <p>
                     {" "}
                     ${" "}
                     <span className='product-detail-price'>
-                      {props.dataBest?.fetchBestProduct.price}
+                      {props.dataBest?.fetchBestProduct?.price}
                     </span>
                   </p>
                   {/* <span>{props.dataBest?.fetchBestProduct.star}</span> */}
@@ -103,7 +104,7 @@ export default function WebsiteDetailItem(props: IDetailItemProps) {
                           <S.TempStarFetch
                             active={
                               itwo + 1 <=
-                              Number(props.dataBest?.fetchBestProduct.star)
+                              Number(props.dataBest?.fetchBestProduct?.star)
                             }
                             // onClick={props.onClickStar}
                             id={String(itwo + 1)}
@@ -112,7 +113,7 @@ export default function WebsiteDetailItem(props: IDetailItemProps) {
                       );
                     })}
                     <span className='star-count'>
-                      ({props.dataBest?.fetchBestProduct.star})
+                      ({props.dataBest?.fetchBestProduct?.star})
                     </span>
                   </S.StarWrapperFetch>
                 </>
