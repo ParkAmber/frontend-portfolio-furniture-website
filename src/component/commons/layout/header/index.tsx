@@ -16,7 +16,7 @@ import { useMutation } from "@apollo/client";
 
 const WHITE_TEXT = [
   "/",
-  "/website",
+  "/website/",
   // "/designer/products/new",
 ];
 
