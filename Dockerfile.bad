@@ -1,0 +1,17 @@
+# #
+# FROM ubuntu:22.04
+
+# RUN sudo apt install -y nodejs
+# RUN sudo npm imstall -g yarn
+
+
+FROM node:16
+
+WORKDIR /my_folder/
+COPY . /my_folder/
+
+RUN yarn install
+RUN yarn build
+
+CMD yarn start
+
