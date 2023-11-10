@@ -42,7 +42,7 @@ export default function ProductEditPage(props: any) {
   //   // variables: { useditemId: "64fa40855d6eaa0029f7a5ca" },
   //   variables: { productId: String(router.query.productId) },
   // });
-  console.log(props)
+  // console.log(props)
   return (
     <>
       {/* <div>hihi</div> */}
@@ -65,7 +65,7 @@ export const getServerSideProps = async (context: any): Promise<any> => {
     const result = await graphQLClient.request<IQuery, IQueryFetchProductArgs>(FETCH_PRODUCT, {
       productId: String(productId),
     });
-console.log(result)
+// console.log(result)
     return {
       props: {
         data: result.fetchProduct,

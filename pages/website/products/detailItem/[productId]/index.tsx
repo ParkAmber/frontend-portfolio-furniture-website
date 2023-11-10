@@ -83,11 +83,11 @@ export const getServerSideProps = async (context: any): Promise<any> => {
     const data = await graphQLClient.request<IQuery, IQueryFetchProductArgs>(FETCH_PROUDUCT, {
       productId: String(productId),
     });
-    console.log(data)
+    // console.log(data)
     const dataProducts = await graphQLClient.request<IQuery, IQueryFetchProductsArgs>(FETCH_PROUDUCTS, {
       search: data?.fetchProduct.files?.[0]?.name.split(".")[1],
     });
-    console.log(data, dataProducts)
+    // console.log(data, dataProducts)
     return {
       props: {
         data,

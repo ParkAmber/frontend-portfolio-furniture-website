@@ -17,7 +17,7 @@ export type IDetailBestItemPropsSSR = {
  
 };
 export default function ProductDetailPage(props: IDetailBestItemPropsSSR) {
-  console.log(props)
+  // console.log(props)
   const router = useRouter();
   // const { data: dataBest } = useQueryBestProductOne({
   //   productId: String(router.query.productId),
@@ -79,11 +79,11 @@ export const getServerSideProps = async (context: any): Promise<any> => {
     const dataBest = await graphQLClient.request<IQuery, IQueryFetchBestProductArgs>(FETCH_BEST_PRODUCT, {
       productId: String(productId),
     });
-    console.log(dataBest)
+    // console.log(dataBest)
     const dataProducts = await graphQLClient.request<IQuery, IQueryFetchProductsArgs>(FETCH_PROUDUCTS, {
       search: dataBest?.fetchBestProduct.files?.[0]?.name.split(".")[1],
     });
-    console.log(dataBest, dataProducts)
+    // console.log(dataBest, dataProducts)
     return {
       props: {
         dataBest: dataBest,
