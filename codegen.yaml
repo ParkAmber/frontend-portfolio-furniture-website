@@ -1,0 +1,7 @@
+schema: https://backend.amberpark.net/graphql
+generates:
+  ./src/commons/types/generated/types.ts:
+    plugins:
+      - typescript
+    config:
+      typesPrefix: I

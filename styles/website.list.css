@@ -1,0 +1,138 @@
+.list-section {
+  display: flex;
+}
+.list-item-section {
+  width: 80vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+.list-item-section div {
+  /* width: 25%; */
+}
+.category-nav-section {
+  width: 15vw;
+  box-sizing: border-box;
+  padding: 100px 0 0 100px;
+}
+.list-item-section .item {
+  box-sizing: border-box;
+  padding: 40px 20px;
+  width: 26vw;
+  height: 55vh;
+  border-bottom: 1px solid #ebebeb;
+  border-right: none;
+  border-left: none;
+}
+/* .list-item-section .section-img {
+  display: block;
+} */
+.list-item-section .section-img img {
+  width: 300px;
+  height: 300px;
+}
+
+.category-nav-section p {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.category-nav-section li {
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+.category-span {
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 20px;
+  /* width: 20px; */
+}
+/* search */
+.search-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 60px;
+  /* width: 15vw; */
+  /* padding: 20px 0px; */
+  /* border-bottom: 2px solid red; */
+}
+.search-section-container {
+  padding: 8px 20px 8px 4px;
+  margin-right: 200px;
+  border-bottom: 2px solid #7b7b7b;
+}
+.search-section input {
+  border: none;
+  padding: 8px 20px 8px 8px;
+}
+
+/* media query */
+/* Mobile */
+@media screen and (max-width: 767px) {
+  .search-section-container {
+    margin: 0 auto;
+    padding: 20px 20px 8px 4px;
+  }
+  .list-section {
+    display: block;
+  }
+
+  .list-item-section {
+    width: 100vw;
+    display: block;
+  }
+  .category-nav-section {
+    width: 100vw;
+    padding: 20px;
+  }
+  .list-item-section .item {
+    padding: 40px 20px;
+    width: 100vw;
+    height: auto;
+  }
+  .list-item-section .section-img img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* Tablet  */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .list-section {
+    display: block;
+  }
+  .category-nav-section {
+    width: 100vw;
+    padding: 20px;
+  }
+  .list-item-section {
+    width: 100vw;
+  }
+  .list-item-section .item {
+    padding: 40px 20px;
+    width: 33vw;
+    height: auto;
+  }
+  .list-item-section .section-img img {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
+  .category-nav-section {
+    /* width: 100vw; */
+    padding: 10px;
+  }
+  .list-item-section {
+    width: 85vw;
+  }
+  .list-item-section .item {
+    height: 80vh;
+    width: 28vw;
+  }
+  .list-item-section .section-img img {
+    width: 250px;
+    height: 250px;
+  }
+}

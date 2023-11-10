@@ -1,0 +1,166 @@
+/* signup */
+.sign-up-con {
+  width: 40vw;
+  margin: 40px auto;
+}
+.sign-up-con input {
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid #ebebeb;
+  padding: 12px;
+  /* color: #ebebeb; */
+}
+.login-section,
+.reset-section,
+.signup-section {
+  width: 40vw;
+  margin: 100px auto;
+  margin-bottom: 50vh;
+}
+.login-section p,
+.signup-section p {
+  text-transform: uppercase;
+}
+.login-section input,
+.reset-section input,
+.signup-section input {
+  /* width: 100%; */
+  margin-top: 20px;
+}
+.login-btns-con,
+.reset-btns-con,
+.signup-btns-con {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.login-section button,
+.reset-section button,
+.signup-section button {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 12px 80px;
+  cursor: pointer;
+}
+.login-btns-con :nth-child(2),
+.reset-btns-con :nth-child(2),
+.signup-btns-con :nth-child(2) {
+  background: #fff;
+  color: #000;
+
+  border: 1px solid #ebebeb;
+}
+p.error {
+  font-size: 12px;
+  margin-top: 10px;
+  text-transform: none;
+  color: red;
+}
+.cretae-account {
+  color: #7b7b7b;
+}
+.cretae-account span a {
+  color: #000;
+}
+.forget-account {
+  margin-top: 20px;
+  text-align: right;
+  font-size: 12px;
+}
+.forget-account span a {
+  color: #7b7b7b;
+}
+.google-login {
+  box-sizing: border-box;
+  /* margin-top: 20px; */
+  /* border-top: 1px solid #ebebeb; */
+  /* padding-top: 20px 0px; */
+}
+.google-login-p {
+  /* width: 80px; */
+  /* height: 80px; */
+  padding: 25px;
+  border-top: 1px solid #ebebeb;
+  /* border-radius: 100px; */
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  margin: 60px auto 20px auto;
+}
+
+.google-login div {
+  /* width: 100%; */
+  /* border: 1px solid #ebebeb; */
+  padding: 12px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  cursor: pointer;
+}
+.google-login div a {
+  text-decoration: none;
+  color: #fff;
+  margin-left: 20px;
+}
+.social-icon {
+  width: 25px;
+  height: 25px;
+}
+/* media query */
+/* Mobile */
+@media screen and (max-width: 767px) {
+  .login-section,
+  .reset-section,
+  .signup-section {
+    width: 90vw;
+    margin: 20px auto;
+    margin-bottom: 50vh;
+  }
+  .sign-up-con {
+    width: 100%;
+    margin: 40px auto;
+  }
+  .login-section button,
+  .reset-section button,
+  .signup-section button {
+    padding: 12px 40px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .login-section,
+  .reset-section,
+  .signup-section {
+    width: 80vw;
+    margin: 20px auto;
+    margin-bottom: 50vh;
+  }
+  .sign-up-con {
+    width: 100%;
+    margin: 40px auto;
+  }
+  .login-section button,
+  .reset-section button,
+  .signup-section button {
+    padding: 12px 50px;
+    margin-left: 40px;
+  }
+  .login-btns-con,
+  .reset-btns-con,
+  .signup-btns-con {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .login-section button,
+  .reset-section button,
+  .signup-section button {
+    padding: 12px 50px;
+    /* margin-left: 40px; */
+  }
+}

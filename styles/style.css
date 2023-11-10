@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@300;400;500;600;800;900&family=Roboto:wght@100;300;400;500;700&family=Smooch+Sans:wght@400;500&display=swap");
+html,
+body,
+ul,
+h1,
+p {
+  margin: 0;
+  padding: 0;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+img {
+  cursor: pointer;
+}
+.text-gray {
+  color: #7b7b7b;
+}
+.text-bold {
+  font-weight: bold;
+}
+h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
+.page-container {
+  /* margin: 20px; */
+  /* background: #ebebeb; */
+  max-width: 90vw;
+  margin: 0 auto;
+}
+.header {
+  /* margin: 20px 40px; */
+  padding: 40px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-item:hover {
+  color: #000;
+}
+.nav-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  list-style: none;
+}
+.nav-container li {
+  text-decoration: underline;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.list {
+  margin-top: 60px;
+  padding: 20px 50px;
+}
+.list p {
+  font-size: 15px;
+}
+.category {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.category button {
+  background: none;
+  /* border: 2px solid #7b7b7b; */
+  padding: 10px 20px;
+  border-radius: 30px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.category-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+.category-item div {
+  width: 50%;
+}
+.category-item-img {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #7b7b7b;
+}
+.post-btn-con {
+  margin-top: 80px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-bottom: 60px;
+}
+.post-btn-con button {
+  background: none;
+  border: 2px solid #7b7b7b;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.post-btn-con button:hover {
+  background: #000;
+  color: #fff;
+}
+.star-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.star-count {
+  padding-left: 10px;
+}
+.thumb-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+/* search btn */
+.search-input {
+  padding: 10px 30px;
+  border: none;
+  background: #ebebeb;
+  /* color: #000; */
+  border-radius: 30px;
+  margin-right: 20px;
+}
+p.price {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0px;
+  /* margin: 0; */
+}
+.header h1 a:visited {
+  color: #000;
+}
+.header a {
+  text-decoration: none;
+}
+/* a:link {
+  color: #7b7b7b;
+} */
+
+/* visited link */
+.header a:visited {
+  color: #7b7b7b;
+}
+.header a:hover {
+  color: #000;
+}
+/* media query */
+/* Mobile */
+@media screen and (max-width: 767px) {
+  .best-seller-item {
+    display: flex;
+    padding: 20px 4px;
+  }
+  .best-seller-item div {
+    width: 20%;
+    padding: 20px 10px;
+  }
+  .best-seller-img {
+    width: 100%;
+    height: 100px;
+  }
+  .header {
+    /* margin: 20px 40px; */
+    padding: 40px 20px;
+  }
+  .best-seller-item p {
+    height: 30px;
+  }
+  .category-item-img {
+    width: 100px;
+    height: 100px;
+  }
+  .list {
+    padding: 0px;
+  }
+  h3 {
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  .list p {
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+  }
+  .star-count {
+    font-size: 12px;
+  }
+  .category button {
+    font-size: 12px;
+    padding: 10px 15px;
+    margin-right: 0;
+  }
+  .search-input {
+    padding: 10px 20px;
+
+    /* color: #000; */
+    border-radius: 30px;
+    margin-right: 0px;
+  }
+}
+/* Tablet  */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .best-seller-item {
+    display: flex;
+    padding: 20px 4px;
+  }
+
+  .best-seller-item div {
+    width: 20%;
+    padding: 20px 10px;
+  }
+  .best-seller-img {
+    width: 100%;
+    height: 100px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .best-seller-item {
+    display: flex;
+    padding: 20px 4px;
+  }
+
+  .best-seller-item div {
+    width: 20%;
+    padding: 20px 10px;
+  }
+  .best-seller-img {
+    width: 100%;
+    height: 200px;
+  }
+}
