@@ -150,6 +150,10 @@ p.price {
 .header a:hover {
   color: #000;
 }
+.loading {
+  box-sizing: border-box;
+  padding: 40px;
+}
 /* media query */
 /* Mobile */
 @media screen and (max-width: 767px) {

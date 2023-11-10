@@ -22,6 +22,7 @@ const isHiddenPath = (path: string) =>
 const HIDDEN_HEADERS = [
   "/designer/products",
   "/designer/products/new",
+  "/weather",
   productIDPattern.source, // Use the regular expression source to match any product ID
   // Add other paths as needed
 ];

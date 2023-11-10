@@ -11,6 +11,8 @@
     "generate": "graphql-codegen"
   },
   "dependencies": {
+    "moment": "^2.29.4",
+    "styled-components": "^6.0.7",
     "@ant-design/icons": "^5.1.4",
     "@apollo/client": "^3.7.12",
     "@emotion/react": "^11.10.6",
