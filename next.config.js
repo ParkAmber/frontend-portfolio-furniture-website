@@ -17,6 +17,7 @@ const nextConfig = {
     "/website/products/totalPayment": { page: "/website/products/totalPayment" },
     "/website/reset": { page: "/website/reset" },
     "/website/signup": { page: "/website/signup" },
+
     "/404": { page: "/404" }
   })
   
