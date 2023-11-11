@@ -12,6 +12,7 @@ const nextConfig = {
     "/website": { page: "/website" },
     "/website/login": { page: "/website/login" },
     "/website/products": { page: "/website/products" },
+    "/weather": { page: "/weather" },
     "/website/products/cart": { page: "/website/products/cart" },
     "/website/products/payment": { page: "/website/products/payment" },
     "/website/products/totalPayment": { page: "/website/products/totalPayment" },
