@@ -7,6 +7,7 @@ const nextConfig = {
   //아래주소들만 out폴더로 만들어주기!(getServerSideProps있는 페이지는 제외시키기!)
   exportPathMap: () => ({
     "/": { page: "/" },
+    "/portfolio": { page: "/portfolio" },
     "/designer/products": { page: "/designer/products" },
     "/designer/products/new": { page: "/designer/products/new" },
     "/website": { page: "/website" },
@@ -18,6 +19,7 @@ const nextConfig = {
     "/website/products/totalPayment": { page: "/website/products/totalPayment" },
     "/website/reset": { page: "/website/reset" },
     "/website/signup": { page: "/website/signup" },
+    "/resume": { page: "/resume" },
 
     "/404": { page: "/404" }
   })

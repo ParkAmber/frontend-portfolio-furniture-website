@@ -18,7 +18,7 @@ export default function Home() {
       <section id='portfolio-main'>
         <div className='portfolio-header'>
             <div>
-              <a href='/'>
+              <a href='/portfolio'>
                 <img src='/logo.png' />
               </a>
         </div>
