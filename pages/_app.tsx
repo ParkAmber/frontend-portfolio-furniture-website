@@ -8,6 +8,7 @@ import "../styles/website.detail.css";
 import "../styles/website.payment.css";
 import "../styles/website.cart.css";
 import "../styles/website.login.css";
+import "../styles/portfolio.main.css";
 // import "../styles/detailComment.css";
 import { AppProps } from "next/app";
 

@@ -119,7 +119,57 @@ export default function WeatherApp() {
 
   // Create a Date object using the adjusted timestamp
   const date = new Date(adjustedTimestamp);
+	function getDayWithOrdinal(day: number) {
+		if (day >= 11 && day <= 13) {
+			return `${day}th`;
+		}
+		switch (day % 10) {
+			case 1:
+				return `${day}st`;
+			case 2:
+				return `${day}nd`;
+			case 3:
+				return `${day}rd`;
+			default:
+				return `${day}th`;
+		}
+	}
+	function getFullDayName(abbreviatedDay: string): string {
+		const dayMap: { [key: string]: string } = {
+			Mon: "Monday",
+			Tue: "Tuesday",
+			Wed: "Wednesday",
+			Thu: "Thursday",
+			Fri: "Friday",
+			Sat: "Saturday",
+			Sun: "Sunday",
+		};
 
+		return dayMap[abbreviatedDay] || abbreviatedDay;
+  }
+  function getFullMonthName(abbreviatedMonth: string): string{
+    const monthMap: { [key: string]: string } = {
+      Jan: 'January',
+      Feb: 'February',
+      Mar: 'March',
+      Apr: 'April',
+      May: 'May',
+      Jun: 'June',
+      Jul: 'July',
+      Aug: 'August',
+      Sep: 'September',
+      Oct: 'October',
+      Nov: 'November',
+      Dec: 'December',
+    };
+    return monthMap[abbreviatedMonth] || abbreviatedMonth;
+  }
+	// console.log(String(date).split(" ")[0]);
+	const todayDay = getFullDayName(String(date).split(" ")[0]);
+	const todayMonth = getFullMonthName(String(date).split(" ")[1]);
+	const todayDate = getDayWithOrdinal(Number(String(date).split(" ")[2]));
+  // console.log(todayDay, todayMonth, todayDate);
+  // 
   function formatDate(dateString: string) {
     const date = moment(dateString);
     const formattedHours = date.format("h");
@@ -216,20 +266,13 @@ export default function WeatherApp() {
 
                 <S.CurrentWeatherP>
                   <span>
-                    {/* {weekday[new Date(currentWeather?.dt * 1000).getDay()]}, */}
-                    {currentWeatherDate.format("dddd")}, &nbsp;
-                    {/* {currentWeather?.dt} */}
+                  {todayDay}, &nbsp;
                   </span>
                   <span>
-                    {/* {getDayWithOrdinal(
-                      new Date(currentWeather?.dt * 1000).getDate()
-                    )} */}
-                    {currentWeatherDate.format("Do")}, &nbsp;
+                	{todayDate}, &nbsp;
                   </span>
                   <span>
-                    {" "}
-                    {/* {monthNames[new Date(result?.list?.[0].dt_txt).getMonth()]} */}
-                    {moment(result?.list?.[0].dt_txt).format("MMMM")}
+                  {todayMonth}
                   </span>
                 </S.CurrentWeatherP>
               </div>
