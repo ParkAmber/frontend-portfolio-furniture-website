@@ -14,19 +14,21 @@ import LayoutNav from "./navigation";
 // ];
 // Define a regular expression pattern to match any product ID after /detail/
 const productIDPattern = /\/detail\/.+/;
-
-// Create a function to check if a path should be hidden
-const isHiddenPath = (path: string) =>
-  HIDDEN_HEADERS.some((pattern) => new RegExp(pattern).test(path));
-
 const HIDDEN_HEADERS = [
   "/designer/products",
   "/designer/products/new",
   "/weather",
+  "/portfolio",
   "/",
+  
   productIDPattern.source, // Use the regular expression source to match any product ID
   // Add other paths as needed
 ];
+// Create a function to check if a path should be hidden
+const isHiddenPath = (path: string) =>
+  HIDDEN_HEADERS.some((pattern) => new RegExp(pattern).test(path));
+
+
 interface ILayoutProps {
   children: JSX.Element;
 }
@@ -39,7 +41,7 @@ export default function Layout(props: ILayoutProps): JSX.Element {
   // isHiddenHeader==> true나 false반환해줌!!
   const isHiddenHeader = isHiddenPath(router.asPath);
 
-  // console.log(isHiddenHeader);
+  // console.log(isHiddenHeader,router.asPath);
   return (
     <>
       {!isHiddenHeader ? (
