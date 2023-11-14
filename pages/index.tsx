@@ -18,7 +18,7 @@ export default function Home() {
       <section id='portfolio-main'>
         <div className='portfolio-header'>
             <div>
-              <a href='/'>
+              <a href='/portfolio'>
                 <img src='/logo.png' />
               </a>
         </div>
@@ -239,21 +239,21 @@ export default function Home() {
         <div className='portfolio-contact-con'>
           <div className='contact-icons'>
           <div className='contact-img'>
-            <img src='portfolio/portfolio-contact.png' />
+            <img src='/social/portfolio-contact.png' />
             </div>
               <div className='social-icons'>
                 <p>Contact</p>
                 <a href="https://www.behance.net/amberpark1"> 
-                  <img src='portfolio/contact-be.png' />
+                  <img src='/social/contact-be.png' />
                 </a>
                 <a href="https://www.linkedin.com/in/hayoung-park12/">
-                  <img src="portfolio/contact-linkden.png" />    
+                  <img src="/social/contact-linkden.png" />    
                 </a>
                 <a href="https://www.instagram.com/hayoung08park/">
-                  <img src='portfolio/contact-insta.png' />
+                  <img src='/social/contact-insta.png' />
                 </a>
                 <a href="mailto:hayoung.p12@gmail.com">
-                  <img src='portfolio/contact-mail.png' />
+                  <img src='/social/contact-mail.png' />
                 </a>
           </div>
           </div>
