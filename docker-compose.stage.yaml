@@ -1,0 +1,43 @@
+version: '3.7'
+
+# services =>컴퓨터들!!
+# services:
+
+#   내백앤드컴퓨터:   ==>computer이름
+#     build:
+#       파일경로: .
+#       파일명: Dockerfile
+
+#   내데이터베이스컴퓨터:  ==>computer이름
+#     build:
+#       파일경로: .
+#       파일명: Dockerfile.mongo
+
+# ||
+# ||
+services:
+    my-backend-computer:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        # volumes:
+        #     - ./src:/myfolder/src
+        ports:
+            - 3000:3000
+        env_file:
+            - ./.env.stage
+
+    # my-database-computer:
+    #     platform: linux/x86_64 #==> 실행시 혹시 에러나면 이거 추가해주기!
+    #     image: mysql:latest
+    #     environment:
+    #         MYSQL_DATABASE: 'mydockerproject'
+    #         MYSQL_ROOT_PASSWORD: 'root'
+    #     ports:
+    #         - 3306:3306
+
+    #redis 컴퓨터
+    my-redis:
+        image: redis:latest
+        ports:
+            - 6379:6379

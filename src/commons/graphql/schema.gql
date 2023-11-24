@@ -1,0 +1,198 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Board {
+  number: Int!
+  writer: String!
+  title: String!
+  contents: String!
+}
+
+type ProductCategory {
+  id: String!
+  name: String!
+}
+
+type ProductTag {
+  id: String!
+  name: String!
+  products: [Product!]!
+}
+
+type User {
+  id: String!
+  email: String!
+  name: String!
+  point: Int!
+  money: Int!
+}
+
+type Product {
+  id: String!
+  name: String!
+  description: String!
+  price: Int!
+  isSoldout: Boolean!
+  productCategory: ProductCategory!
+  user: User!
+  productTags: [ProductTag!]!
+  files: [ProductFile!]!
+  createdAt: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type ProductFile {
+  id: String!
+  name: String!
+  products: [Product!]!
+}
+
+type ProductCart {
+  id: String!
+  user: String!
+  name: String!
+  quantity: Int!
+  price: Int!
+}
+
+type BestProduct {
+  id: String!
+  name: String!
+  description: String!
+  price: Int!
+  isSoldout: Boolean!
+  productCategory: ProductCategory!
+  user: User!
+  productTags: [ProductTag!]!
+  files: [ProductFile!]!
+  star: Int!
+}
+
+type PointTransaction {
+  id: String!
+  impUid: String!
+  amount: Int!
+  status: POINT_TRANSACTION_STATUS_ENUM!
+  user: User!
+  createdAt: DateTime!
+}
+
+enum POINT_TRANSACTION_STATUS_ENUM {
+  PAYMENT
+  CANCEL
+}
+
+type Payment {
+  id: String!
+  amount: Int!
+  tax: Int!
+  commission: Int!
+}
+
+type Query {
+  fetchBoards: [Board!]
+  fetchProducts(search: String, page: Int): [Product!]!
+  fetchProductsByCategory(search: String, page: Int): [Product!]!
+  fetchProduct(productId: String!): Product!
+  fetchProductsCount(search: String, page: Int): Int!
+  fetchProductsWithDeleted: [Product!]!
+  fetchDeletedProducts: [Product!]!
+  fetchProductCategory: [ProductCategory!]!
+  fetchUsers: [User!]!
+  fetchUser(email: String!): User!
+  fetchLoginUser(email: String!): User!
+  fetchPointTransaction: [PointTransaction!]!
+  fetchPayments: [Payment!]!
+  fetchCarts: [ProductCart!]!
+  fetchCart(productId: String!): ProductCart!
+  fetchBestProducts: [BestProduct!]!
+  fetchBestProduct(productId: String!): BestProduct!
+  fetchBestProductsWithDeleted: [BestProduct!]!
+  fetchDeletedBestProducts: [BestProduct!]!
+}
+
+type Mutation {
+  createBoard(createBoardInput: CreateBoardInput!): String!
+  createProduct(createProductInput: CreateProductInput!): Product!
+  updateProduct(productId: String!, updateProductInput: UpdateProductInput!): Product!
+  deleteProduct(productId: String!): Boolean!
+  restoreItems(productId: String!): Boolean!
+  createProductCategory(name: String!): ProductCategory!
+  createUser(email: String!, password: String!, name: String!): User!
+  updateUser(productId: String!, updateUserInput: UpdateUserInput!): User
+  deleteUser(productId: String!): Boolean!
+  updateUserPwd(productId: String!, password: String!): User!
+  deleteLoginUser(productId: String!): Boolean!
+  login(email: String!, password: String!): String!
+  logout: String!
+  restoreAccessToken: String!
+  createPointTransaction(impUid: String!, amount: Int!): PointTransaction!
+  cancelPointTransaction(impUid: String!): PointTransaction!
+  createPayment(amount: Int!, tax: Float!, commission: Float!): Payment!
+  cancelPayment(amount: Float!, tax: Float!, commission: Float!): Payment!
+  createCart(user: String!, name: String!, quantity: Float!, price: Float!): ProductCart!
+  uploadFile(file: Upload!): String!
+  createBestProduct(createBestProductInput: CreateBestProductInput!): BestProduct!
+  updateBestProduct(productId: String!, updateBestProductInput: UpdateBestProductInput!): BestProduct!
+  deleteBestProduct(productId: String!): Boolean!
+  restoreBestItems(productId: String!): Boolean!
+}
+
+input CreateBoardInput {
+  writer: String!
+  title: String!
+  contents: String!
+}
+
+input CreateProductInput {
+  name: String!
+  description: String!
+  price: Int!
+  productCategoryId: String!
+  productTags: [String!]!
+  files: [String!]!
+}
+
+input UpdateProductInput {
+  name: String
+  description: String
+  price: Int
+  productCategoryId: String
+  productTags: [String!]
+  files: [String!]
+}
+
+input UpdateUserInput {
+  email: String
+  password: String
+  name: String
+  age: Int
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+input CreateBestProductInput {
+  name: String!
+  description: String!
+  price: Int!
+  productCategoryId: String!
+  productTags: [String!]!
+  files: [String!]!
+  star: Int!
+}
+
+input UpdateBestProductInput {
+  name: String
+  description: String
+  price: Int
+  productCategoryId: String
+  productTags: [String!]
+  files: [String!]
+  star: Int
+}
