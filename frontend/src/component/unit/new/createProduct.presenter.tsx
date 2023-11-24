@@ -1,12 +1,12 @@
 import { ChangeEvent, useRef, useState } from "react";
 import { useMutation } from "@apollo/client";
 import { UPLOAD_FILE } from "./createProduct.queries";
-import { checkValidationImage } from "../../../../src/commons/01/Uploads01.validation";
+import { checkValidationImage } from "../../../commons/01/Uploads01.validation";
 import {
   UploadButton,
   UploadFileHidden,
   UploadImage,
-} from "../../../../src/commons/01/Uploads01.styles";
+} from "../../../commons/01/Uploads01.styles";
 import { IProductWriteUIProps } from "./createProduct.types";
 
 export default function ProductCreateUI(props: IProductWriteUIProps) {

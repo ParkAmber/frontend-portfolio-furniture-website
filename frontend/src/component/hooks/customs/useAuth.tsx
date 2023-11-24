@@ -5,7 +5,7 @@ import { useRecoilState, useRecoilValueLoadable } from "recoil";
 import {
   accessTokenState,
   restoreAccessTokenLoadable,
-} from "../../../component/stores/index";
+} from "../../stores/index";
 import { getAccessToken } from "../../../commons/libraries/getAccessToken";
 // import { getAccessToken } from "../../../component/libraries/getAccessToken";
 
