@@ -6,8 +6,8 @@ const passport_google_oauth20_1 = require("passport-google-oauth20");
 class JwtGoogleStrategy extends (0, passport_1.PassportStrategy)(passport_google_oauth20_1.Strategy, 'google') {
     constructor() {
         super({
-            clientID: "431398552262-43lu39m7e8snimkd29p4itiiuur5ioak.apps.googleusercontent.com",
-            clientSecret: "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",
+            clientID: PROCESS_CLIENT_ID,
+            clientSecret: PROCESS_CLIENT_ID_SECRET
             callbackURL: "http://localhost:3000/login/google",
             scope: ["email", "profile"]
         });
