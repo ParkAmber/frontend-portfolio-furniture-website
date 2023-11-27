@@ -29,7 +29,6 @@ export default function ApolloSetting(props: IApolloSettingProps): JSX.Element {
       for (const err of graphQLErrors) {
         //2 graphQLErrors => check. if the error is "UNAUTHENTICATED"!
         if (err.extensions.code === "UNAUTHENTICATED") {
-          //fromPromise와 flatMap은 나중에 배울것임!
           return fromPromise(
             getAccessToken().then((newAccessToken) => {
               setAccessToken(newAccessToken ?? "");
