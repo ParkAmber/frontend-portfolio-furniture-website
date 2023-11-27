@@ -8,8 +8,8 @@ export const useOnchange = () => {
   const [productTags, setProductTags] = useState<string[]>([]);
   const [productCategoryId, setProductCategoryId] = useState<string>("");
   const [fileUrls, setFileUrls] = useState(["", "", ""]);
-  const [imageUrls, setImageUrls] = useState<string[]>(["", "", ""]); //미리보기 용
-  const [files, setFiles] = useState<File[]>([]); //데이터 보내기 용
+  const [imageUrls, setImageUrls] = useState<string[]>(["", "", ""]); 
+  const [files, setFiles] = useState<File[]>([]); 
 
   const onChangeKeyword = (value: string) => {
     setKeyword(value);
