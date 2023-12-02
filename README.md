@@ -1,6 +1,26 @@
-Overview: This project revolves around a furniture website, where I assumed responsibility for the entire development process—from web design and frontend development to backend implementation and production deployment. My primary focus centered on crafting seamless login/signup functionalities on both the frontend and backend, emphasizing login authorization and authentication. The core features encompass search, payment processing, file uploads, and orchestrating the controlled flow of data between the frontend and backend.
+# Furniture Website
++ Demo: https://amberpark.site/website/
 
-Challenges:
+  
+### **Overview:** 
+This project revolves around a furniture website, where I assumed responsibility for the entire development process—from web design and frontend development to backend implementation and production deployment. My primary focus centered on crafting seamless login/signup functionalities on both the frontend and backend, emphasizing login authorization and authentication. The core features encompass search, payment processing, file uploads, and orchestrating the controlled flow of data between the frontend and backend.
+
+### **Development Goals:** 
+Implementing the entire development process from web design to production. understanding of the interaction between frontend and backend components, fostering a holistic approach to web development.
+
+### **Sills:** 
++ HTML
++ CSS
++ React.js
++ Next.js
++ Nest.js
++ Node.js
++ GraphQL
+
+### **Advanced Feature:** 
++ Login Functionality : Implementing the process of obtaining tokens using cookies, enhancing the security and efficiency of user authentication during login.
+
++ **Challenges:**
 
 1. While implementing CRUD APIs using ORM, I encountered difficulties in consolidating diverse data from various tables.
 2. Streamlining the logout process.
@@ -10,7 +30,7 @@ Challenges:
 6. Mitigating unnecessary rerenders.
 7. Minimizing reflows.
 
-Solutions:
++ **Solutions:**
 
 1. To address the data combination issue in DB, I adopted a strategy of saving each distinct dataset and facilitating dependency injection.
 2. Utilizing Redis, I implemented a blacklist for stored tokens and streamlined Redis deployment through Docker for efficiency.
