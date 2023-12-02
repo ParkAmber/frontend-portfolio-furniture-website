@@ -19,6 +19,11 @@ Implementing the entire development process from web design to production. under
 
 ### **Advanced Feature:** 
 + Login Functionality : Implementing the process of obtaining tokens using cookies, enhancing the security and efficiency of user authentication during login.
+  
+![login](https://github.com/ParkAmber/frontend-portfolio-furniture-website/blob/main/login_page.png)
+
++ Payment Functionality 
+
 
 + **Challenges:**
 
