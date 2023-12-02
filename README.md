@@ -1,5 +1,6 @@
 # Furniture Website
 + Demo: https://amberpark.site/website/
++ Backend URL: https://backend.amberpark.net/graphql
 
   
 ### **Overview:** 
@@ -22,8 +23,90 @@ Implementing the entire development process from web design to production. under
   
 ![login](https://github.com/ParkAmber/frontend-portfolio-furniture-website/blob/main/login_page.png)
 
-+ Payment Functionality 
+    const onClickLogin = async (data: IFormData) => {
+      try {
+        //1. Obtain access token through the login mutation.
+        const result = await login({
+          variables: { email: data.email, password: data.pw },
+        });
+        console.log(result);
+        const accessToken = result.data?.login;
+        console.log(accessToken);
 
+      //2. Store the obtained access token in the global state.
+      if (accessToken === undefined) {
+        alert("Login fail!! please try again..");
+        return;
+      }
+      setAccessToken(accessToken);
+
+      //3. Navigate to the successful login page.
+      void router.push("/");
+    } catch (error) {
+      if (error instanceof Error) alert(error.message);
+    }
+    };
+
+
+
+    
++ Payment Functionality : Integration of payment processing using the "Import" library for seamless transactions.
+  
+![total payment](https://github.com/ParkAmber/frontend-portfolio-furniture-website/blob/main/pyment_total_page.png)
+
+![payment_one](https://github.com/ParkAmber/frontend-portfolio-furniture-website/blob/main/payment_page.png)
+
+      useEffect(() => {
+      const script = document.createElement("script"); //<script></script>tag
+      script.src = "https://cdn.iamport.kr/v1/iamport.js";
+  
+      document.head.appendChild(script); 
+      script.onload = () => {
+      if (window.IMP) {
+        const { IMP } = window;
+        IMP.init("imp"); // Example: imp00000000
+        IMP.loadUI("paypal-spb", requestData, function (rsp: any) {
+          try {
+            axios
+              .post(
+                "https://backend.amberpark.net/graphql",
+                {
+                  query: `
+                  mutation {
+                    createPointTransaction(impUid: "${rsp.imp_uid}", amount: ${requestData.amount}){
+                      id
+                      status
+                    }
+                  }
+                `,
+                },
+                {
+                  headers: {
+                    Authorization: `Bearer ${accessToken}`,
+                  },
+                }
+              )
+              .then((response) => {
+                if (response.data) {
+                  console.log(response, response.data.data);
+                  if (
+                    response.data?.data?.createPointTransaction.status ===
+                    "PAYMENT"
+                  ) {
+                    alert("Payment successful!");
+                    router.push(visitedPage);
+                  }
+                  // Handle any additional logic here after a successful request
+                }
+              });
+          } catch (error) {
+            alert(error);
+          }
+        });
+      }
+      };
+      }, []);
+      
 
 + **Challenges:**
 
