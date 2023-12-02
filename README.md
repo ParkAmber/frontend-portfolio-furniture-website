@@ -12,6 +12,7 @@ Implementing the entire development process from web design to production. under
 ### **Sills:** 
 + HTML
 + CSS
++ TypeScript
 + React.js
 + Next.js
 + Nest.js
