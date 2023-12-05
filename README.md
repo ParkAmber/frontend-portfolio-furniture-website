@@ -1,7 +1,8 @@
 # Furniture Website
 + Demo:
+  
   ![demo](https://github.com/ParkAmber/frontend-portfolio-furniture-website/blob/main/furniture_website_demo.gif)
- ![Backend URL: https://backend.amberpark.net/graphql]
+
 
   
 ### **Overview:** 
