@@ -1,7 +1,7 @@
 # Furniture Website
 + Demo:
   
-  ![demo](https://github.com/ParkAmber/frontend-portfolio-furniture-website/blob/main/furniture_website_demo.gif)
+![demo](https://github.com/ParkAmber/frontend-portfolio-furniture-website/blob/main/website_demo.mp4)
 
 
   
