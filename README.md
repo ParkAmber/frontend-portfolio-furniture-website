@@ -8,6 +8,9 @@ https://github.com/ParkAmber/frontend-portfolio-furniture-website/assets/1066879
 ### **Overview:** 
 This project revolves around a furniture website, where I assumed responsibility for the entire development process—from web design and frontend development to backend implementation and production deployment. My primary focus centered on crafting seamless login/signup functionalities on both the frontend and backend, emphasizing login authorization and authentication. The core features encompass search, payment processing, file uploads, and orchestrating the controlled flow of data between the frontend and backend.
 
+### **Project Planning Purpose:** 
+My objective was to bring to life the website I had meticulously designed. I aimed to handle the entire process independently. Moreover, I aspired to create an e-commerce website that mirrored real-world services widely used by online communities. With a personal affinity for furniture, my ambition extended to developing an e-commerce platform dedicated to furniture, akin to an authentic service. This intrinsic passion and vision served as the driving force behind the initiation of this personal project.
+
 ### **Development Goals:** 
 Implementing the entire development process from web design to production. understanding of the interaction between frontend and backend components, fostering a holistic approach to web development.
 
