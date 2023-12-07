@@ -45,7 +45,7 @@ Implementing the entire development process from web design to production. under
 2. Enhanced Security Measures: Utilizing advanced security measures, such as Redis for token blacklisting and Docker deployment, to fortify user data protection in an e-commerce context.
 3. Secure Checkout Processes: Configuring cookie settings securely, employing setHeader options, and ensuring httponly options to protect against potential security threats during the checkout process.
 4. Transaction Handling: Standardizing transaction sequences to handle simultaneous checkout processes and prevent transaction conflicts.
-5. Abandoning the use of props through the implementation of custom hooks.
+5. Eliminating reliance on props by incorporating custom hooks.
 6. Dynamic Content Optimization: Employing memoization techniques to efficiently handle dynamic content rendering, improving overall frontend performance.
 7. Efficient Catalog Display: Implementing measures to establish fixed heights for data placements, reducing reflows and enhancing the efficiency of product catalog displays.
 
