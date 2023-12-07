@@ -31,23 +31,23 @@ Implementing the entire development process from web design to production. under
 -------
 + **Challenges:**
 
-1. While implementing CRUD APIs using ORM, I encountered difficulties in consolidating diverse data from various tables.
-2. Streamlining the logout process.
-3. Overcoming CORS issues when handling token storage in cookies, transmitting them to the backend, and processing backend responses.
-4. Tackling deadlocks.
-5. Addressing refactoring needs, particularly eliminating redundant code with props.
-6. Mitigating unnecessary rerenders.
-7. Minimizing reflows.
+1. Product Management Complexity: Managing diverse product data, including images, catagories, and pricing, presented challenges during CRUD API implementation.
+2. User Experience Optimization: Streamlining the logout process to enhance the overall user experience, especially in the context of customer accounts and security.
+3. Security Concerns with Tokens: Overcoming CORS issues related to token storage, transmission, and backend processing is crucial for securing user data and transactions in an e-commerce environment.
+4. Concurrency in Checkout: Tackling deadlocks, particularly during high-traffic periods, to ensure smooth and concurrent processing of customer transactions.
+5. Code Optimization: Addressing refactoring needs, particularly eliminating redundant code with props.
+6. Dynamic Content Rendering: Mitigating unnecessary rerenders, particularly when dealing with dynamically changing product listings or user interactions.
+7. Frontend Performance for Catalogs: Minimizing reflows when displaying extensive product catalogs to maintain a responsive and efficient frontend.
 
 + **Solutions:**
 
 1. To address the data combination issue in DB, I adopted a strategy of saving each distinct dataset and facilitating dependency injection.
-2. Utilizing Redis, I implemented a blacklist for stored tokens and streamlined Redis deployment through Docker for efficiency.
-3. Configuring cookie settings with permitted origins, employing setHeader, and incorporating secure and httponly options to fortify protection against JavaScript manipulation via setCookie.
-4. Standardizing the sequence of table queries across all APIs.
+2. Enhanced Security Measures: Utilizing advanced security measures, such as Redis for token blacklisting and Docker deployment, to fortify user data protection in an e-commerce context.
+3. Secure Checkout Processes: Configuring cookie settings securely, employing setHeader options, and ensuring httponly options to protect against potential security threats during the checkout process.
+4. Transaction Handling: Standardizing transaction sequences to handle simultaneous checkout processes and prevent transaction conflicts.
 5. Abandoning the use of props through the implementation of custom hooks.
-6. Employing memoization techniques such as useCallback() and prev to prevent unnecessary rerenders.
-7. Establishing fixed heights for data placements to prevent browser reflows.
+6. Dynamic Content Optimization: Employing memoization techniques to efficiently handle dynamic content rendering, improving overall frontend performance.
+7. Efficient Catalog Display: Implementing measures to establish fixed heights for data placements, reducing reflows and enhancing the efficiency of product catalog displays.
 
 -------
 
