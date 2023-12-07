@@ -8,8 +8,12 @@ https://github.com/ParkAmber/frontend-portfolio-furniture-website/assets/1066879
 ### **Overview:** 
 This project revolves around a furniture website, where I assumed responsibility for the entire development process—from web design and frontend development to backend implementation and production deployment. My primary focus centered on crafting seamless login/signup functionalities on both the frontend and backend, emphasizing login authorization and authentication. The core features encompass search, payment processing, file uploads, and orchestrating the controlled flow of data between the frontend and backend.
 
-### **Project Planning Purpose:** 
-My objective was to bring to life the website I had meticulously designed. I aimed to handle the entire process independently. Moreover, I aspired to create an e-commerce website that mirrored real-world services widely used by online communities. With a personal affinity for furniture, my ambition extended to developing an e-commerce platform dedicated to furniture, akin to an authentic service. This intrinsic passion and vision served as the driving force behind the initiation of this personal project.
+### **Project Objective:** 
+My goal was to bring to life a meticulously designed website, crafted with a focus on appealing to potential employers in the thriving e-commerce industry. The intention was to showcase my ability to independently handle the entire process. Recognizing the paramount importance of online stores in the digital landscape, I aimed to develop an e-commerce platform that mirrors real services widely embraced by users.
+
+Given my personal fondness for furniture, my aspirations extended to creating a dedicated e-commerce platform for furniture enthusiasts. This endeavor was driven by a desire to provide an authentic and immersive service in the furniture retail space. The passion for furniture and the vision of a user-friendly and visually appealing website became the driving force behind the initiation of this personal project.
+
+This project serves as a testament to my commitment to crafting websites that not only meet but exceed the expectations of the e-commerce market. The dedication to user-friendly design and visual aesthetics is a key aspect that sets this project apart and aligns with the evolving needs of the dynamic e-commerce landscape.
 
 ### **Development Goals:** 
 Implementing the entire development process from web design to production. understanding of the interaction between frontend and backend components, fostering a holistic approach to web development.
