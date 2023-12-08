@@ -41,9 +41,9 @@ Implementing the entire development process from web design to production. under
 
 + **Solutions:**
 
-1. To address the data combination issue in DB, I adopted a strategy of saving each distinct dataset and facilitating dependency injection.
+1. Data Combination in DB: Adopting a strategy of saving each distinct dataset and facilitating dependency injection to address data combination issues in the database.
 2. Enhanced Security Measures: Utilizing advanced security measures, such as Redis for token blacklisting and Docker deployment, to fortify user data protection in an e-commerce context.
-3. Secure Checkout Processes: Configuring cookie settings securely, employing setHeader options, and ensuring httponly options to protect against potential security threats during the checkout process.
+3. Secure Checkout Processes: Configuring cookie settings securely, employing setHeader options, and ensuring httpOnly options to protect against potential security threats during the checkout process.
 4. Transaction Handling: Standardizing transaction sequences to handle simultaneous checkout processes and prevent transaction conflicts.
 5. Eliminating reliance on props by incorporating custom hooks.
 6. Dynamic Content Optimization: Employing memoization techniques to efficiently handle dynamic content rendering, improving overall frontend performance.
